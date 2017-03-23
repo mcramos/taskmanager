@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Project Tracker</title>
+
+	<link rel="stylesheet" href="dash.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>	
+	<script src="templateLoader.js"></script>
+	<!-- Latest compiled and minified CSS -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+	<!-- Optional theme -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+
+	<!-- Latest compiled and minified JavaScript -->
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>	
+</head>
+
+
+<body>
+<div id="all-container">
+	<div id="links">
+		<ul>
+			<li class='desenvolvedores'>Desenvolvedores</li>
+			<li class='projetos'>Projetos</li>
+			<li class='sprints'>Sprints</li>
+			<li class='dashboard'>Dashboard</li>
+		</ul>
+	</div>
+	<div id="container">
+
+	</div>
+</div>
+<div id="target">
+
+</div>
+
+<script type="x-tmpl-mustache" id="templateDivLane">
+	<input type='button' value='Back' onclick='location.href = index.html'>
+	{{#lanes}}
+		<div class="lane" data-id="{{id}}">
+			<div class="label">
+				<h2>{{titulo}}</h2>			
+			</div>		
+			<div class="inside-lane {{classe}}">
+
+			{{#cartelas}}
+				<div class='cartela' draggable='true' data-id="{{id}}" data-nome="{{nome}}">
+					<p>{{id}}<br>
+					{{nome}}</p>
+				</div>
+			{{/cartelas}}			
+
+			</div>
+		</div>
+	{{/lanes}}
+</script>
+
+<script type="x-tmpl-mustache" id="templateProjetos">
+	<input type='button' value='Back' onclick='location.href = index.html'>
+	<div>
+	<input type='button' value='BAAA' onclick='location.href = index.html'>
+	<input type='button' value='Teste' onclick='location.href = index.html'>
+	</div>
+</script>
+</body>
+
+<script src="lib/mustache.js"></script>
+<script src="mocks.js"></script>
+<script src="dash.js"></script>
+</html>
